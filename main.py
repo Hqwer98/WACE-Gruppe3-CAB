@@ -1,6 +1,6 @@
 import numpy as np
 import sympy as sp
-import matplotlib as plt
+import matplotlib.pyplot as plt
 
 test = 123
 print(test)
@@ -20,7 +20,6 @@ def f(x):
 
 
 x = sp.Symbol('x')
-f = x ** 2 + 1
 
 f_numeric = sp.lambdify(x, f, 'numpy')
 
@@ -31,9 +30,9 @@ f_ableitung_ganz = np.gradient(f_values, x_values)
 
 print("Ganze-Ableitung von f(x):", f_ableitung_ganz)
 
-# matplotlib
-
-x = np.array(-3, 3, 0.01)
+x = np.arange(-3, 3, 0.01)
 y = f(x)
+dy = derivate(y, x)
 plt.plot(x, y)
+plt.plot(x, dy)
 plt.show()
