@@ -6,6 +6,6 @@ print("moin moin meister nase")
 
 print("Test-C")
 
-def apply(x):
-    return x +1
 
+def apply(x):
+    return x / 1
