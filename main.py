@@ -1,4 +1,6 @@
 import numpy as np
+import sympy as sp
+import matplotlib as plt
 
 test = 123
 print(test)
@@ -17,10 +19,21 @@ def f(x):
     return np.square(x) + 1
 
 
-x_point = 2
+x = sp.Symbol('x')
+f = x ** 2 + 1
 
-delta_x = 1
+f_numeric = sp.lambdify(x, f, 'numpy')
 
-f_ableitung = (f(x_point + delta_x) - f(x_point) / delta_x)
+x_values = np.linspace(-5, 5, 100)
+f_values = f_numeric(x_values)
 
-print("Ableitung von f(x) an der Stelle x=", x_point, "ist", f_ableitung)
+f_ableitung_ganz = np.gradient(f_values, x_values)
+
+print("Ganze-Ableitung von f(x):", f_ableitung_ganz)
+
+# matplotlib
+
+x = np.array(-3, 3, 0.01)
+y = f(x)
+plt.plot(x, y)
+plt.show()
