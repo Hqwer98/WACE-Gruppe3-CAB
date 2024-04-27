@@ -1,4 +1,5 @@
-import Numpy as np
+import numpy as np
+import scipy as sp
 
 test = 123
 print(test)
@@ -15,3 +16,7 @@ def apply(x):
 
 def f(x):
     return np.square(x) + 1
+
+
+def integration(x):
+    return sp.trapz(x)
