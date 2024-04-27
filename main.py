@@ -11,3 +11,7 @@ print("Test-C")
 
 def apply(x):
     return x / 1
+
+
+def f(x):
+    return np.square(x) + 1
