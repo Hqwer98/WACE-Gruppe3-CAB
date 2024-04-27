@@ -21,11 +21,4 @@ def f(x):
 
 
 def integration(x):
-    return sp.integrate(x)
-
-x = np.arange(-3, 3, 0.01)
-y = f(x)
-
-plt.plot(y,y)
-
-plt.show()
+    return sp.trapz(x)
