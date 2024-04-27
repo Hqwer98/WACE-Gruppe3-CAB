@@ -1,4 +1,4 @@
-import Numpy as np
+import numpy as np
 
 test = 123
 print(test)
