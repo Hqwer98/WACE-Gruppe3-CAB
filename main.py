@@ -1,5 +1,7 @@
 import numpy as np
 import scipy as sp
+import matplotlib.pyplot as plt
+
 
 test = 123
 print(test)
@@ -19,4 +21,11 @@ def f(x):
 
 
 def integration(x):
-    return sp.trapz(x)
+    return sp.integrate(x)
+
+x = np.arange(-3, 3, 0.01)
+y = f(x)
+
+plt.plot(y,y)
+
+plt.show()
