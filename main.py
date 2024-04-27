@@ -1,3 +1,5 @@
+import Numpy as np
+
 test = 123
 print(test)
 
