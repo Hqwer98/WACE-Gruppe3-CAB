@@ -1,4 +1,26 @@
-\documentclass[12pt,accentcolor=TUDa-2c, marginpar=false, authorontitle=true]{tudabeamer}
+\documentclass[
+aspectratio=169,
+%	english,
+design=2023,
+german,
+accentcolor=TUDa-2c,
+% headrule=true, %OPTIONAL: Hinzufügen für farbigen Streifen (in diesem Fall TUDa-2c)
+author-on-title,
+logofile=images/tuda_logo.pdf
+]{tudabeamer} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Download des TU-Logos
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% https://download.hrz.tu-darmstadt.de/protected/CE/TUDa_LaTeX/tuda_logo.pdf
+% The path to the logo can be given a "logofile" above
+
+\usepackage[ngerman]{babel}
+\usepackage[babel]{csquotes}
+\usepackage{media9}
+\usepackage{animate}
+\usepackage[overlay]{textpos}
+\usepackage{tuda-pgfplots}
 
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
@@ -10,20 +32,59 @@
 \usepackage[squaren]{SIunits}
 
 \title{Differentiation und Integration}
-\author{Aykut Karakoc, Christian Rosenhagen, Bogdan Tanase}
+\subtitle{\small Kurs: Wissenschaftliches Arbeiten im CE}
+\author[Karakoc | Rosenhagen | Tanase]{Aykut Karakoc, Christian Rosenhagen, Bogdan Tanase}
+\department{TU Darmstadt | Computational Engineering}
+\institute{WACE -- SoSe 2024}
+
+\titlegraphic*{\includegraphics[]{images/tuda_home2.jpg}}
+\partnerlogo{\textcolor{accentcolor}{\includegraphics[height=0.7cm]{images/ce_logo_black.pdf}}}
+%\date{\today}
 \date{10. Juli 2024}
+
+\newcommand{\pdfmovie}[4]{\href{run:#1}{\framebox{\parbox[c][#3][c]{#2}{\center #4}}}}
+
+
+
 
 \begin{document}
 	\maketitle
 	
-	\begin{frame}{Gliederung}
-		\begin{itemize}[<+->]
-			\item Thema 1
-			\item Thema2
-		\end{itemize}
+	\setbeamertemplate{title in head/foot}{Normalerweise auch Titel + Authoren}
+	\begin{frame}
+		\frametitle{Inhalt des Vortrags}
+		\tableofcontents%[currentsection,subsectionstyle=show/show/hide]
+	\end{frame}
+	
+	\section{Section 1}
+	\subsection{Subsection 1.1}
+	\subsection{Subsection 1.2}
+	\section{Section 2}
+	
+%	\begin{frame}{Gliederung}
+%		\begin{itemize}[<+->]
+%			\item Thema 1
+%			\item Thema2
+%		\end{itemize}
+%	\end{frame}
+	
+	
+	\setbeamertemplate{title in head/foot}{Bald wird nichts mehr im header sein}
+	\begin{frame}
+		\frametitle{Vorlage 1}
 	\end{frame}
 
-	\begin{frame}{Quellen}
-		
+	\setbeamertemplate{title in head/foot}{}
+	\begin{frame}
+		\frametitle{Vorlage 2}
 	\end{frame}
+
+	\begin{frame} 
+	\frametitle{Quellen (noch mit Beispiel)}
+		\begin{thebibliography}{9}
+			\bibitem{Pan2019} \textcolor{darkgray}{P. Pan und T. Bell, \emph{Theorie über farbenfrohe Pferde}, 2019, Wunschverlag.}
+		\end{thebibliography}
+	\end{frame}
+
+
 \end{document}
