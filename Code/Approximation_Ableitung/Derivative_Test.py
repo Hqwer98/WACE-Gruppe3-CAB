@@ -92,7 +92,7 @@ def plot_function_with_derivatives(
     plt.title('Funktion ' + function_name + ' = ' + function_expression + ' mit erste und zweite Ableitung')
     plt.xlabel('x')
     plt.ylabel('y')
-    plt.grid()
+    plt.grid(linestyle="--")
     plt.show()
 
 
