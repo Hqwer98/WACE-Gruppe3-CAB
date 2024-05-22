@@ -57,11 +57,19 @@ def test_approximation(
 
 expectation_of_first_derivative = np.array([0, 4, 8, 12, 16])
 expectation_of_second_derivative = np.array([4, 4, 4, 4, 4])
-print(test_approximation(g, expectation_of_first_derivative, expectation_of_second_derivative, 0.01))
+test_result = test_approximation(g, expectation_of_first_derivative, expectation_of_second_derivative, 0.01)
+
+if test_result:
+    print("Die Funktion konnte mit der gegebenen Toleranz approximiert werden.")
+else:
+    print("Die Funktion konnte nicht mit der gegebenen Toleranz approximiert werden.")
 
 
-def plot_function_with_derivatives(function: Callable[[np.ndarray], np.ndarray], i: float, function_name: str,
-                                   function_expression: str):
+def plot_function_with_derivatives(
+        function: Callable[[np.ndarray], np.ndarray],
+        i: float, function_name: str,
+        function_expression: str
+):
     """
     Plots function f and its derivatives
     :param function: function to be plotted
