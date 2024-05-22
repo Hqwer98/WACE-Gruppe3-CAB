@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from Derivative import Derivative
+from Code.Approximation_Ableitung.Derivative import Derivative
 from typing import Callable
 
 
