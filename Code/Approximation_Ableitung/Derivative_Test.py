@@ -67,7 +67,8 @@ else:
 
 def plot_function_with_derivatives(
         function: Callable[[np.ndarray], np.ndarray],
-        i: float, function_name: str,
+        i: float,
+        function_name: str,
         function_expression: str
 ):
     """
