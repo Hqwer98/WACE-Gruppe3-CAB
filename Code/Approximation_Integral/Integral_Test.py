@@ -47,6 +47,20 @@ def plot_function_with_integral(function: Callable, a: float, b: float):
     plt.grid(linestyle="--")
     plt.show()
 
+    simpsonRule = SimpsonRule(4)
+    y = simpsonRule.get_plotting_values(function, a, b)
+    x = np.linspace(a, b, len(y))
+
+    plt.figure(figsize=(12, 6))
+    plt.plot(x, y, label=r'$f(x) = 4x^3 + 2x$')
+    plt.title('Funktion und das approximierte Integral (Simpson mit 4 Knoten)')
+    plt.fill_between(x, y, color='green', alpha=0.2, label=r'$\int_0^1 f(x) dx \approx 2$')
+    plt.legend()
+    plt.xlabel('x')
+    plt.ylabel('y')
+    plt.grid(linestyle="--")
+    plt.show()
+
 
 plot_function_with_integral(f, 0, 1)
 test_approximation(g, 0, np.pi)

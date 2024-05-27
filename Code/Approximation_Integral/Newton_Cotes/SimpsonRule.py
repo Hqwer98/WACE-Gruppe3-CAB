@@ -50,10 +50,18 @@ class SimpsonRule(NewtonCotes):
         return h * (f(a) + f(b) + 4 * f((a + b)/2))
 
     def get_plotting_values(self, f: Callable[[float], float], a: float, b: float) -> np.ndarray:
+        """
+        Returns the values of the approximated integral at all xi
+        :param f: function f(x)
+        :param a: lower bound of the integral
+        :param b: upper bound of the integral
+        :return: a numpy array of values of the approximated integral
+        """
         h = (b - a) / self.node_count
-        plotting_values = [f(a), f(b)]
+        plotting_values = [f(a)]
         for i in range(1, self.node_count):
             xi = a + i * h
             plotting_values.append(f(xi))
+        plotting_values.append((f(b)))
         plotting_values = np.array(plotting_values)
         return plotting_values
