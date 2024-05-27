@@ -1,4 +1,5 @@
 from typing import Callable
+import numpy as np
 from Code.Approximation_Integral.Newton_Cotes.NewtonCotes import NewtonCotes
 
 
@@ -47,3 +48,12 @@ class SimpsonRule(NewtonCotes):
         """
         h = (b - a) / 6
         return h * (f(a) + f(b) + 4 * f((a + b)/2))
+
+    def get_plotting_values(self, f: Callable[[float], float], a: float, b: float) -> np.ndarray:
+        h = (b - a) / self.node_count
+        plotting_values = [f(a), f(b)]
+        for i in range(1, self.node_count):
+            xi = a + i * h
+            plotting_values.append(f(xi))
+        plotting_values = np.array(plotting_values)
+        return plotting_values

@@ -85,6 +85,7 @@ def plot_function_with_derivatives(
     df = Derivative.of_order_1(function, x, h)
     ddf = Derivative.of_order_2(function, x, h)
 
+    plt.figure(figsize=(12, 6))
     plt.plot(x, f, label=r'$f(x)$')
     plt.plot(x, df, label=r'$f´(x)$')
     plt.plot(x, ddf, label=r'$f´´(x)$')
