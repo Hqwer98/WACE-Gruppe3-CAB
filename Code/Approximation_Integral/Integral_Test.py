@@ -32,7 +32,7 @@ def test_approximation(function: Callable, a: float, b: float):
     print("Milne-Regel Ergebnis:", newton_cotes_result2)
 
 
-def plot_function_with_integral(function: Callable, a: float, b: float):
+def plot_function_with_integral(function: Callable, a: float, b: float, node_count=4):
     x = np.linspace(a, b, 1000)
     y = function(x)
 
@@ -47,7 +47,7 @@ def plot_function_with_integral(function: Callable, a: float, b: float):
     plt.grid(linestyle="--")
     plt.show()
 
-    simpsonRule = SimpsonRule(4)
+    simpsonRule = SimpsonRule(node_count)
     y = simpsonRule.get_plotting_values(function, a, b)
     x = np.linspace(a, b, len(y))
 
