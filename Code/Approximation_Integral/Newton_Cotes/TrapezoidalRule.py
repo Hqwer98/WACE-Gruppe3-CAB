@@ -1,4 +1,3 @@
-import numpy as np
 from typing import Callable
 from Code.Approximation_Integral.Newton_Cotes.NewtonCotes import NewtonCotes
 
@@ -18,7 +17,7 @@ class TrapezoidalRule(NewtonCotes):
         assert node_count > 0
         self.node_count = node_count
 
-    def calculate_integral(self, f: Callable[[float], float], a: float, b: float) -> float:
+    def calculate_integral_composite(self, f: Callable[[float], float], a: float, b: float) -> float:
         """
         Calculates the integral of a function with the trapezoidal rule in regard to the given nodes.
         :param f: function f(x)
