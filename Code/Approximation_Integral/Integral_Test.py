@@ -53,7 +53,7 @@ def plot_function_with_integral(function: Callable, a: float, b: float, node_cou
 
     plt.figure(figsize=(12, 6))
     plt.plot(x, y, label=r'$f(x) = 4x^3 + 2x$')
-    plt.title('Funktion und das approximierte Integral (Simpson mit 4 Knoten)')
+    plt.title('Funktion und das approximierte Integral (Simpson mit ' + str(node_count) + ' Knoten)')
     plt.fill_between(x, y, color='green', alpha=0.2, label=r'$\int_0^1 f(x) dx \approx 2$')
     plt.legend()
     plt.xlabel('x')
