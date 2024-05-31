@@ -3,18 +3,21 @@ import matplotlib.pyplot as plt
 from Code.Approximation_Ableitung.Derivative import Derivative
 from typing import Callable
 
+
+def l1(x):
+    return 2.5 * x + 3.75
+
+
+def l2(x):
+    return -2.5 * x + 3.75
+
+
 #Anwendungsbeispiel: Simulation der Blechverformung
 def plot_simulation_metal_deformation():
     # Create a grid of x and y values
     x = np.linspace(-5, 5, 100)
     y = np.linspace(-5, 5, 100)
     x, y = np.meshgrid(x, y)
-
-    def l1(x):
-        return 2.5 * x + 3.75
-
-    def l2(x):
-        return -2.5 * x + 3.75
 
     # Define a function that simulates the metal deformation
     def deformation_function(x, y):
