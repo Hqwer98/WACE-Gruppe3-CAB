@@ -7,14 +7,29 @@ from typing import Callable
 
 
 def l1(x: np.ndarray) -> np.ndarray:
+    """
+    Linear function for the first segment.
+    :param x: x value
+    :return: output of the linear function
+    """
     return 2.5 * x + 3.75
 
 
 def l2(x: np.ndarray) -> np.ndarray:
+    """
+    Linear function for the second segment.
+    :param x: x value
+    :return: output of the linear function
+    """
     return -2.5 * x + 3.75
 
 
 def deformation_function(x: np.ndarray) -> np.ndarray:
+    """
+    Deformation function that models the shape of the deformed metal sheet.
+    :param x: x value
+    :return: output array of z values representing the deformation
+    """
     z = np.zeros_like(x)
     mask1 = (-1.5 < x) & (x < -1.3)
     mask2 = (-1.3 <= x) & (x <= 1.3)
@@ -28,6 +43,12 @@ def deformation_function(x: np.ndarray) -> np.ndarray:
 
 
 def temperature_function(x: np.ndarray, z: np.ndarray) -> np.ndarray:
+    """
+    Function to calculate the temperature distribution based on deformation.
+    :param x: x value
+    :param z: z value
+    :return: output array of temperature values
+    """
     h = 0.01
     gradient = np.abs(Derivative.of_order_1(deformation_function, x, h)) / 2.5
     temperature = gradient - z
@@ -38,6 +59,12 @@ def temperature_function(x: np.ndarray, z: np.ndarray) -> np.ndarray:
 
 # Anwendungsbeispiel: Simulation der Blechverformung
 def plot_simulation_metal_deformation():
+    """
+    Plot the simulation of the temperature distribution on a deformed metal sheet.
+
+    This function creates a 3D surface plot of the deformation and overlays a color map
+    representing the temperature distribution.
+    """
     x = np.linspace(-5, 5, 500)
     y = np.linspace(-5, 5, 100)
     x, y = np.meshgrid(x, y)
