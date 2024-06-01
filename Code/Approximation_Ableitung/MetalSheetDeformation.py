@@ -52,7 +52,7 @@ def temperature_function(x: np.ndarray, z: np.ndarray) -> np.ndarray:
     gradient = np.abs(Derivative.of_order_1(deformation_function, x, h)) / 2.5
     temperature = gradient - z
     temperature[(-1.3 <= x) & (x <= 1.3)] = 0.4
-    temperature = 1000 * temperature
+    temperature = 1000 * temperature + 20
     return temperature
 
 
