@@ -3,7 +3,6 @@ import matplotlib.pyplot as plt
 from matplotlib import cm
 from matplotlib.colors import LightSource
 from Code.Approximation_Ableitung.Derivative import Derivative
-from typing import Callable
 
 
 def l1(x: np.ndarray) -> np.ndarray:
