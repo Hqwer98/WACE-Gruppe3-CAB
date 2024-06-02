@@ -25,8 +25,8 @@ def M(x: float) -> float:
 def single_value_integral():
     integral_with_trapezoidal = trapezoidal.calculate_integral_composite(q, 0, 5)
     approximated_result = (((q_0 * l) / 4) - integral_with_trapezoidal)
-    print(f"Angenähertes Integral mit Trapezregel: {approximated_result}")
-    print("Tatsächliches Integral bei Q(5) = -2.5")
+    print(f"Angenähertes Integral mit Trapezregel: {approximated_result} N")
+    print("Tatsächliches Integral bei Q(5) = -2.5 N")
 
 
 # Anwendungsbeispiel: Schnittgrößen in einem Träger
