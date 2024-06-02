@@ -23,10 +23,9 @@ def M(x: float) -> float:
 
 # Anwendungsbeispiel: Berechnung des Integrals in einem bestimmten Punkt
 def single_value_integral():
-    integral_with_trapezoidal = newtonCotes.calculate_integral(q, 0, 5)
-    approximated_result = (((q_0 * l) / 4) - integral_with_trapezoidal)
+    approximated_result = -1 * newtonCotes.calculate_integral(q, 0, 5)
     print(f"Angenähertes Integral bei Q(5) mit Trapezregel: {approximated_result} N")
-    print("Tatsächliches Integral bei Q(5) = -2.5 N")
+    print("Tatsächliches Integral bei Q(5) = -7.5 N")
 
 
 # Anwendungsbeispiel: Schnittgrößen in einem Träger
