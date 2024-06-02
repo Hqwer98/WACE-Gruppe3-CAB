@@ -20,12 +20,14 @@ def Q(x: float) -> float:
 def M(x: float) -> float:
     return simpson.calculate_integral_simple(Q, x, l)
 
+
 # Anwendungsbeispiel: Berechnung des Integrals in einem bestimmten Punkt
 def single_value_integral():
     integral_with_trapezoidal = trapezoidal.calculate_integral_composite(q, 0, 5)
-    approximated_result = (((q_0 * l)/4) - integral_with_trapezoidal)
+    approximated_result = (((q_0 * l) / 4) - integral_with_trapezoidal)
     print(f"Angenähertes Integral mit Trapezregel: {approximated_result}")
-    print("Tatsächliches Integral bei Q(5) = 5")
+    print("Tatsächliches Integral bei Q(5) = -2.5")
+
 
 # Anwendungsbeispiel: Schnittgrößen in einem Träger
 def plot_internal_forces():
