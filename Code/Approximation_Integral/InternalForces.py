@@ -1,11 +1,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from Code.Approximation_Integral.Newton_Cotes.SimpsonRule import SimpsonRule
-from Code.Approximation_Integral.Newton_Cotes.TrapezoidalRule import TrapezoidalRule
+from Code.Approximation_Integral.Newton_Cotes.NewtonCotes import NewtonCotes
 
 l = 10  #Meter
 q_0 = 2  #Newton/Meter
-trapezoidal = TrapezoidalRule(node_count=100)
+newtonCotes = NewtonCotes(3)
 simpson = SimpsonRule(node_count=100)
 
 
@@ -23,9 +23,9 @@ def M(x: float) -> float:
 
 # Anwendungsbeispiel: Berechnung des Integrals in einem bestimmten Punkt
 def single_value_integral():
-    integral_with_trapezoidal = trapezoidal.calculate_integral_composite(q, 0, 5)
+    integral_with_trapezoidal = newtonCotes.calculate_integral(q, 0, 5)
     approximated_result = (((q_0 * l) / 4) - integral_with_trapezoidal)
-    print(f"Angenähertes Integral mit Trapezregel: {approximated_result} N")
+    print(f"Angenähertes Integral bei Q(5) mit Trapezregel: {approximated_result} N")
     print("Tatsächliches Integral bei Q(5) = -2.5 N")
 
 
