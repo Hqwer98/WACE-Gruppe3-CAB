@@ -21,11 +21,11 @@ def M(x: float) -> float:
     return simpson.calculate_integral_simple(Q, x, l)
 
 
-# Anwendungsbeispiel: Berechnung des Integrals in einem bestimmten Punkt
+# Anwendungsbeispiel: Berechnung des Integrals in einem bestimmten Intervall
 def single_value_integral():
-    approximated_result = -1 * newtonCotes.calculate_integral(q, 0, 5)
-    print(f"Angenähertes Integral bei Q(5) mit Trapezregel: {approximated_result} N")
-    print("Tatsächliches Integral bei Q(5) = -7.5 N")
+    approximated_result = newtonCotes.calculate_integral(q, 0, 5)
+    print(f"Angenähertes Integral bei Q(5) - Q(0) mit Trapezregel: {approximated_result} N")
+    print(f"Tatsächliches Integral bei Q(5) - Q(0): {Q(5) - Q(0)} N")
 
 
 # Anwendungsbeispiel: Schnittgrößen in einem Träger
