@@ -30,7 +30,7 @@
 %%%%%%%%%%%%%%%%%%%
 % Literaturverzeichnis
 %%%%%%%%%%%%%%%%%%%
-\usepackage[backend=biber,style=alphabetic]{biblatex}   % Literaturverzeichnis
+\usepackage[backend=biber,style=numeric]{biblatex}   % Literaturverzeichnis
 \addbibresource{literature.bib}
 % WICHTIG!! je nach Version ist es nötig, manuell auf Biber zum Erzeugen des Literaturverzeichnisses umzustellen: Optionen --> TexStudio konfigurieren... --> Erzeugen --> StandardBibliograhieprogramm --> Biber
 
@@ -54,16 +54,20 @@
 % Pseudocode
 %%%%%%%%%%%%%%%%%%%
 \usepackage[linesnumbered,lined,boxruled]{algorithm2e} % Package für Pseudocode
+\usepackage{listings}
 
 %%%%%%%%%%%%%%%%%%%
 % Plotting und Grafik
 %%%%%%%%%%%%%%%%%%%
 \usepackage{tuda-pgfplots} % Package für Plotting with TUDa mods
+\usepackage{graphicx}
 
 %%%%%%%%%%%%%%%%%%%
 % Sonstiges
 %%%%%%%%%%%%%%%%%%%
 \usepackage{blindtext} % Package für Blindtext
+\usepackage{caption}
+\usepackage{hyperref}
 
 \begin{document}
 	\title{WACE SoSe24 Hausarbeit Team03}
@@ -98,12 +102,11 @@
 	%%%%%%%%%%%%%%%%%%%
 	%Abstract / Kurzzusammenfassung
 	%%%%%%%%%%%%%%%%%%%
-
+    \include{chapters/Abstract}
 
 	%%%%%%%%%%%%%%%%%%%
 	%Inhaltsverzeichnis 
 	%%%%%%%%%%%%%%%%%%%
-	\cleardoublepage
 	\tableofcontents % Erstellte ein Inhaltsverzeichnis
 	
 	\cleardoublepage
@@ -113,29 +116,39 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 	% INHALT, am Besten ausgelagert in eigene Files/Kapitel und dann mit \include{Unterordner/Filename} eingefügt, sorgt für bessere Übersichtlichkeit und Fehlersuche. Einzelne Dateien sind aktuell im Ordner Sections abgelegt. 
+
+    \include{chapters/Praxisbeispiele}
 	
+	\include{chapters/Differentiation}
+	
+	\include{chapters/Newton_Cotes_Formel}
+	
+	%\include{chapters/Simpson-Formel} %Ist in Chapter Newton_Cotes_Formel
 	
 	%\include{}
-	
-	%\include{}
-	
-	%\include{}
-	
-	%\include{}
-	
-	%\include{}
+
+    %\include{}
+
+    %\include{}
+
+    %\include{}
 	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	
+
+    %%%%%%%%%%%%%%%%%%%
+	%Abschluss
+	%%%%%%%%%%%%%%%%%%%
+    \include{chapters/Abschluss}
+ 
 	%%%%%%%%%%%%%%%%%%%
 	%Abbildungs- und Tabellenverzeichnis
 	%%%%%%%%%%%%%%%%%%%
-	%\listoffigures % Abbildungsverzeichnis (captions in den Figuren werden als Referenz genommen)
+	\listoffigures % Abbildungsverzeichnis (captions in den Figuren werden als Referenz genommen)
 	%\listoftables % Verzeichnis der Tabellen (captions in den Tabellen werden als Referenz genommen)
 	
 	%%%%%%%%%%%%%%%%%%%
 	%Literaturverzeichnis an dieser Stelle
 	%%%%%%%%%%%%%%%%%%%
-	%\printbibliography % Erstellt die Bibliography
+	\printbibliography % Erstellt die Bibliography
 
 \end{document}
