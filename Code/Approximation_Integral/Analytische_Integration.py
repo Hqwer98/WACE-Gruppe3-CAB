@@ -1,37 +1,29 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-from Code.Approximation_Integral.Newton_Cotes.SimpsonRule import SimpsonRule
-
-def f(x):
-    return x**2
-
-newtonCotes = SimpsonRule()
+from Code.Approximation_Integral.Newton_Cotes.NewtonCotes import NewtonCotes
 
 a = 0
-b = 10
+b = 3
+
+def f(x):
+    return np.square(x)
+
+newtonCotes = NewtonCotes(2)
 
 x = np.linspace(a, b, 100)
-y = (1/3) * x**3
+y = f(x)
 
 plt.figure(figsize=(5, 5))
-plt.plot(x, y, label=r'$\frac{1}{3}x^3$')
-plt.title(r' Funktion $\frac{1}{3}x^3$')
+plt.plot(x, y, label=r'$x^2$')
+plt.title(r' Funktion $x^2$')
 plt.xlabel('x')
 plt.ylabel('y')
 plt.grid()
-plt.legend(loc='upper left')
 
-x = np.linspace(a, b, 100)
-y = newtonCotes.get_plotting_values(f,a,b)
+area = newtonCotes.calculate_integral(f, a, b)
 
-plt.figure(figsize=(5,5))
-plt.plot(x, y, label=r'$\frac{1}{3}x^3$')
-plt.title(r' Funktion $\frac{1}{3}x^3$')
-plt.xlabel('x')
-plt.ylabel('y')
-plt.grid()
+plt.fill_between(x, y, color='blue', alpha=0.2, label=r'$\int_{a}^{b}x^2dx = $' + str(area))
 plt.legend(loc='upper left')
 
 plt.show()
-
