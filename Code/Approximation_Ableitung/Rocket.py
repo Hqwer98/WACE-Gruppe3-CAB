@@ -26,7 +26,7 @@ for i in range(len(rt)):
         rocket_plotting_velocity.append(rv[i])
         rocket_plotting_acceleration.append(ra[i])
 
-fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(10, 8))
+fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(8, 6))
 
 ax1.plot(rocket_plotting_time, rocket_plotting_height, 'o', label='Raketen Höhe')
 ax1.plot(rocket_plotting_time, rocket_plotting_height)
