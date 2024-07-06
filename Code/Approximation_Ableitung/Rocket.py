@@ -38,13 +38,15 @@ ax2.plot(rocket_plotting_time, rocket_plotting_velocity, 'o', label='Raketen Ges
 ax2.plot(rocket_plotting_time, rocket_plotting_velocity)
 ax2.legend(loc='best')
 ax2.grid()
-ax2.set_ylabel(r"Geschwindigkeit in $m/s$")
+ax2.set_ylabel(r"Geschwindigkeit in $m/s$", labelpad=10)
 
 ax3.plot(rocket_plotting_time, rocket_plotting_acceleration, 'o', label='Raketen Beschleunigung')
 ax3.plot(rocket_plotting_time, rocket_plotting_acceleration)
 ax3.legend(loc='best')
 ax3.grid()
-ax3.set_ylabel(r"Beschleunigung in $m/s^2$")
+ax3.set_ylabel(r"Beschleunigung in $m/s^2$", labelpad=20)
 ax3.set_xlabel(r"Zeit in $s$")
 
+fig.subplots_adjust(left=0.2)
+plt.tight_layout()
 plt.show()
